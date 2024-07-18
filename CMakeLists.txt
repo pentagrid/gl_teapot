@@ -7,5 +7,12 @@ project(gl_teapot VERSION 1.0)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+#find_package(OpenGl REQUIRED)
+find_package(GLUT REQUIRED)
+
 # Add the executable
-add_executable(gl_teapot src/main.cpp)
+add_executable(teapot src/main.cpp)
+
+# Link Libraries
+target_link_libraries(teapot ${GLUT_LIBRARIES} -lGL -lGLU)
+
